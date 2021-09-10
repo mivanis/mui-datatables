@@ -348,6 +348,7 @@ class TableToolbar extends React.Component {
             </div>
           )}
         </div>
+        {options.customToolbarActionsStart && options.customToolbarActionsStart({ displayData: this.props.displayData })}
         <div className={options.responsive !== RESPONSIVE_FULL_WIDTH_NAME ? classes.actions : classes.fullWidthActions}>
           {!(options.search === false || options.search === 'false' || options.searchAlwaysOpen === true) && (
             <Tooltip title={search} disableFocusListener>
@@ -458,7 +459,7 @@ class TableToolbar extends React.Component {
               }
             />
           )}
-          {options.customToolbar && options.customToolbar({ displayData: this.props.displayData })}
+          {options.customToolbarActionsEnd && options.customToolbarActionsEnd({ displayData: this.props.displayData })}
         </div>
       </Toolbar>
     );

@@ -93,7 +93,7 @@ const TABLE_LOAD = {
 };
 
 // Populate this list with anything that might render in the toolbar to determine if we hide the toolbar
-const TOOLBAR_ITEMS = ['title', 'filter', 'search', 'print', 'download', 'viewColumns', 'customToolbar'];
+const TOOLBAR_ITEMS = ['title', 'customToolbarActionsStart', 'filter', 'search', 'print', 'download', 'viewColumns', 'customToolbarActionsEnd'];
 
 const hasToolbarItem = (options, title) => {
   options.title = title;
@@ -172,7 +172,8 @@ class MUIDataTable extends React.Component {
       customSearch: PropTypes.func,
       customSearchRender: PropTypes.oneOfType([PropTypes.func, PropTypes.element]),
       customSort: PropTypes.func,
-      customToolbar: PropTypes.oneOfType([PropTypes.func, PropTypes.element]),
+      customToolbarActionsStart: PropTypes.oneOfType([PropTypes.func, PropTypes.element]),
+      customToolbarActionsEnd: PropTypes.oneOfType([PropTypes.func, PropTypes.element]),
       customToolbarSelect: PropTypes.oneOfType([PropTypes.func, PropTypes.element]),
       draggableColumns: PropTypes.object,
       enableNestedDataAccess: PropTypes.string,
